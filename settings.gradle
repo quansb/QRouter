@@ -1,0 +1,3 @@
+include ':qrouter'
+include ':app'
+rootProject.name = "Qrouter"
