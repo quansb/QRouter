@@ -1,3 +1,6 @@
+include ':router'
+include ':processor'
+include ':annotation'
 include ':qrouter'
 include ':app'
 rootProject.name = "Qrouter"

@@ -11,6 +11,9 @@ android {
         versionCode 1
         versionName "1.0"
 
+
+        buildConfigField "String", "router_all_class_package_name",rootProject.stringType(packageNameForAPT)
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -37,7 +40,7 @@ android {
         artifactId = 'advance'
         publishVersion = '1.0.0'
         desc = 'android skill up'
-        website = 'https://github.com/quansb/Advance'
+        website = 'https://github.com/quansb/QRouter.git'
     }
 
 
@@ -59,4 +62,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    api project(path: ':annotation')
+    annotationProcessor project(path: ':processor')
 }

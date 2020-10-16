@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.quansb.annotation.QRouter;
+
+@QRouter(path = "com/quansb/qrouter",name = "MainActivity")
 public class MainActivity extends AppCompatActivity {
 
     @Override
