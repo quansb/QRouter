@@ -14,17 +14,11 @@ android component communication
 
 切记：必须写在defaultConfig节点下
 
-`
-
+```
    javaCompileOptions {  
-   
             annotationProcessorOptions {  
-            
                 arguments = [moduleName: project.getName()]  
-                
             }  
-            
         }  
-        
-`
+```
      
