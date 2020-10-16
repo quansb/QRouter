@@ -40,7 +40,7 @@ android {
         groupId = 'com.duiud.quansb'
         repoName = "quansb"
         artifactId = 'qrouter'
-        publishVersion = '1.0.0'
+        publishVersion = '1.0.2'
         desc = 'android module communicate by activity'
         website = 'https://github.com/quansb/QRouter.git'
     }
@@ -50,18 +50,18 @@ android {
 
 
 buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.novoda:bintray-release:0.9.2'
-    }
+//    repositories {
+//        jcenter()
+//    }
+//    dependencies {
+//        classpath 'com.novoda:bintray-release:0.9.2'
+//    }
 }
 
 
 dependencies {
-    api project(path: ':annotation')
-    annotationProcessor project(path: ':processor')
+//    api project(path: ':annotation')
+//    annotationProcessor project(path: ':processor')
 }
 
 

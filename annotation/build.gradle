@@ -1,8 +1,18 @@
 apply plugin: 'java-library'
+apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
 
+
+publish {
+    userOrg = 'zz1060743738'
+    groupId = 'com.duiud.quansb'
+    repoName = "quansb"
+    artifactId = 'annotation'
+    publishVersion = '1.0.2'
+    desc = 'android module communicate by activity'
+    website = 'https://github.com/quansb/QRouter.git'
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8

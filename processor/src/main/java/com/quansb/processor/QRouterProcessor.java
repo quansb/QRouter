@@ -1,6 +1,7 @@
 package com.quansb.processor;
 
 import com.google.auto.service.AutoService;
+import com.quansb.annotation.QRouter;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
@@ -8,7 +9,7 @@ import com.squareup.javapoet.ParameterizedTypeName;
 import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
 import com.squareup.javapoet.WildcardTypeName;
-import com.quansb.annotation.QRouter;
+
 import com.quansb.processor.utils.ProcessorConfig;
 
 import java.io.IOException;
