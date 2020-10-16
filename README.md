@@ -1,9 +1,21 @@
 # QRouter
 android component communication
 
-初始版本功能  
-不同的module间Activity组件通信  
+版本功能  
+支持不同的module间Activity组件通信  
 
+
+# Download
+use Gradle:
+```
+repositories {
+  google()
+  jcenter()
+}
+dependencies {
+  implementation 'com.duiud.quansb:qrouter:1.0.0'
+}
+```
 
 
 
