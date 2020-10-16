@@ -1,8 +1,15 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
     defaultConfig {
         applicationId "com.quansb.start"
@@ -37,6 +44,7 @@ android {
 
 
 
+
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -44,6 +52,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    api project(path: ':qrouter')
-    annotationProcessor project(path: ':processor')
+
+    implementation 'com.github.quansb:QRouter:1.0.0'
+    annotationProcessor 'com.github.quansb.QRouter:processor:1.0.0'
+   // annotationProcessor 'com.github.quansb:QRouterprocessor:1.0.0'
 }

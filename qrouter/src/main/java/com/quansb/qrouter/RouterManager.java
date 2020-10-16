@@ -41,8 +41,8 @@ public class RouterManager {
 
     /**
      * @param context      context
-     * @param group        module 名字
-     * @param activityName 在该module 存在的 Activity 名字
+     * @param group        所在的module名字
+     * @param activityName 在该module中存在的 Activity 名字
      */
     public void startActivity(Context context, String group, String activityName) {
         Log.e("RouterManager", "startActivity.......");
