@@ -11,8 +11,11 @@ android component communication
 使用方式：
 在需要的module中配置
 切记：必须写在defaultConfig节点下
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-            }
-        }
+`
+   javaCompileOptions {  
+            annotationProcessorOptions {  
+                arguments = [moduleName: project.getName()]  
+            }  
+        }  
+`
+     
