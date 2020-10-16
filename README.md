@@ -19,7 +19,7 @@ dependencies {
 ```
 
 
-#Setting
+# Setting
 在activity对应的module中配置
 切记：必须写在defaultConfig节点下
 
@@ -31,14 +31,14 @@ dependencies {
         }  
 ```
 
-#Using way
+# Using way
 
 在Activity中使用注解  @QRouter(path = "com/quansb/main", name = "MainActivity")
 
 其中path是类的包名  name是类的名字 （！！注意不是类全限定名！！）
 
 
-#Init
+# Init
 ```
  /**
      * @param context      context
@@ -50,7 +50,7 @@ dependencies {
     }
 ```
 
-#Example
+# Example
 ```
 @QRouter(path = "com/quansb/main", name = "MainActivity")
 public class MainActivity extends AppCompatActivity {
