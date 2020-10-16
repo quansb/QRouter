@@ -32,13 +32,16 @@ android {
         //  checkReleaseBuild false
     }
 
+    //发布命令
+//    gradlew clean build bintrayUpload -PbintrayUser=zz1060743738 -PbintrayKey=497d4db708baafbc9313b91ff6e5aacbbd0c5f01 -PdryRun=false
 
     publish {
         userOrg = 'zz1060743738'
-        groupId = 'com.qsb.advance'
-        artifactId = 'advance'
+        groupId = 'com.duiud.quansb'
+        repoName = "quansb"
+        artifactId = 'qrouter'
         publishVersion = '1.0.0'
-        desc = 'android skill up'
+        desc = 'android module communicate by activity'
         website = 'https://github.com/quansb/QRouter.git'
     }
 

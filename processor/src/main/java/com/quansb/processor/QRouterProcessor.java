@@ -173,9 +173,9 @@ public class QRouterProcessor extends AbstractProcessor {
             }
         }
 
-        ClassName routerGroup = ClassName.get("com.app.routers", "RouterGroup");
+        ClassName routerGroup = ClassName.get("com.quansb.qrouter", "RouterGroup");
 
-        ClassName routerPath = ClassName.get("com.app.routers", "RouterPath");
+        ClassName routerPath = ClassName.get("com.quansb.qrouter", "RouterPath");
 
         ClassName activity = ClassName.get("android.app", "Activity");
 
@@ -218,9 +218,9 @@ public class QRouterProcessor extends AbstractProcessor {
 
     private TypeSpec createRouterClass() {
 
-        ClassName routerGroup = ClassName.get("com.app.routers", "RouterGroup");
+        ClassName routerGroup = ClassName.get("com.quansb.qrouter", "RouterGroup");
 
-        ClassName routerPath = ClassName.get("com.app.routers", "RouterPath");
+        ClassName routerPath = ClassName.get("com.quansb.qrouter", "RouterPath");
 
         ClassName router$$Path$$module = ClassName.get(packageName, ProcessorConfig.PATH_CLASS_NAME + moduleName);
 

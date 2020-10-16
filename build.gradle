@@ -33,18 +33,6 @@ ext {
     buildToolsVersion = '29.0.3'
 }
 
-static def stringType(String type) {
-    return "\"" + type + "\""
-}
-static def intType(String type) {
-    return type
-}
-static def booleanType(String type) {
-    return type
-}
-
-
-
 
 
 task clean(type: Delete) {

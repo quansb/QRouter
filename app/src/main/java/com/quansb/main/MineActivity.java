@@ -1,12 +1,13 @@
-package com.quansb.qrouter;
+package com.quansb.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
 import com.quansb.annotation.QRouter;
+import com.quansb.main.R;
 
-@QRouter(path = "com.quansb.qrouter",name = "MineActivity")
+@QRouter(path = "com.quansb.main",name = "MineActivity")
 public class MineActivity extends AppCompatActivity {
 
     @Override

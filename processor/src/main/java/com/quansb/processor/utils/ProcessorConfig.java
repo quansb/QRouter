@@ -6,4 +6,6 @@ public interface ProcessorConfig {
     String APT_PACKAGE = "packageNameForAPT"; //：目的是接收 包名（APT 存放的包名）
     String GROUP_CLASS_NAME = "QRouter$$Group$$";
     String PATH_CLASS_NAME = "QRouter$$Path$$";
+
+
 }
