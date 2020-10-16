@@ -1,5 +1,7 @@
 apply plugin: 'java-library'
 apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.quansb'
 
 dependencies {
 }

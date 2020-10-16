@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.quansb'
+
 
 android {
     compileSdkVersion 29
@@ -58,8 +62,8 @@ buildscript {
 
 
 dependencies {
-//    api project(path: ':annotation')
-//    annotationProcessor project(path: ':processor')
+    api project(path: ':annotation')
+    annotationProcessor project(path: ':processor')
 }
 
 
