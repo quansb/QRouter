@@ -1,4 +1,3 @@
-include ':router'
 include ':processor'
 include ':annotation'
 include ':qrouter'

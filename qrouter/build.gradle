@@ -12,9 +12,8 @@ android {
         versionName "1.0"
 
 
-        buildConfigField "String", "router_all_class_package_name",rootProject.stringType(packageNameForAPT)
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // buildConfigField "String", "router_all_class_package_name", rootProject.stringType(packageNameForAPT)
+        buildConfigField "String", "router_all_class_package_name", stringType("com.quansb")
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -58,10 +57,11 @@ buildscript {
 
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     api project(path: ':annotation')
     annotationProcessor project(path: ':processor')
+}
+
+
+static def stringType(String type) {
+    return "\"" + type + "\""
 }

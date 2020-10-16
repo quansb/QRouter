@@ -40,15 +40,15 @@ public class RouterManager {
     }
 
     /**
-     * @param context
-     * @param group        module 名字   z_app  z_app_admob
+     * @param context      context
+     * @param group        module 名字
      * @param activityName 在该module 存在的 Activity 名字
      */
     public void startActivity(Context context, String group, String activityName) {
         Log.e("RouterManager", "startActivity.......");
 
         String groupClassName = ROUTER_APT_ALL_CLASS_PACKAGE_NAME + "." + FILE_GROUP_NAME + group;
-        Class activityClass;
+        Class<?> activityClass;
 
         if (null != pathMap.get(activityName)) {
             Log.e("RouterManager", "pathMap not null: ");
@@ -65,9 +65,9 @@ public class RouterManager {
         }
         try {
             Log.e("RouterManager", "groupMap is null  use reflect at first times");
-            Class groupClass = Class.forName(groupClassName);
+            Class<?> groupClass = Class.forName(groupClassName);
             RouterGroup routerGroup = (RouterGroup) groupClass.newInstance();
-            Class pathClass = routerGroup.getGroupMap().get(group);
+            Class<?> pathClass = routerGroup.getGroupMap().get(group);
             RouterPath routerPath = (RouterPath) pathClass.newInstance();
             groupMap.put(group, routerPath);
             activityClass = routerPath.getPathMap().get(activityName);
@@ -102,8 +102,13 @@ public class RouterManager {
         context.startActivity(intent);
     }
 
-
-    public static Class<?> get( String group, String className) {
+    /**
+     *
+     * @param group      所在的module名字
+     * @param className  在该module 存在的 Class名字
+     * @return  返回 Class类
+     */
+    public Class<?> getModuleClass(String group, String className) {
         String groupClassName = ROUTER_APT_ALL_CLASS_PACKAGE_NAME + "." + FILE_GROUP_NAME + group;
         Class<?> clazz = null;
         if (null != pathMap.get(className)) {
@@ -120,9 +125,9 @@ public class RouterManager {
 
         try {
             Log.e("RouterManager", "groupMap is null  use reflect at first times");
-            Class groupClass = Class.forName(groupClassName);
+            Class<?> groupClass = Class.forName(groupClassName);
             RouterGroup routerGroup = (RouterGroup) groupClass.newInstance();
-            Class pathClass = routerGroup.getGroupMap().get(group);
+            Class<?> pathClass = routerGroup.getGroupMap().get(group);
             RouterPath routerPath = (RouterPath) pathClass.newInstance();
             groupMap.put(group, routerPath);
             clazz = routerPath.getPathMap().get(className);

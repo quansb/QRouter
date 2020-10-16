@@ -42,7 +42,7 @@ import javax.tools.Diagnostic;
  */
 @AutoService(Processor.class)
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
-@SupportedAnnotationTypes({"com.sss.annotation.QRouter"})
+@SupportedAnnotationTypes({"com.quansb.annotation.QRouter"})
 @SupportedOptions({ProcessorConfig.MODULE_NAME, ProcessorConfig.APT_PACKAGE})
 public class QRouterProcessor extends AbstractProcessor {
 
@@ -184,15 +184,18 @@ public class QRouterProcessor extends AbstractProcessor {
         ClassName hashMap = ClassName.get("java.util", "HashMap");
 
         TypeName activityClass = ParameterizedTypeName.get(ClassName.get(Class.class), WildcardTypeName.subtypeOf(activity));
-        TypeName pathMap = ParameterizedTypeName.get(ClassName.get(Map.class), ClassName.get(String.class), activityClass);
-        TypeName pathMap2 = ParameterizedTypeName.get(ClassName.get(Map.class), ClassName.get(String.class), ClassName.get(Class.class));
+
+        TypeName pathMap = ParameterizedTypeName.get(ClassName.get(Map.class), ClassName.get(String.class),activityClass);
+
+        TypeName clazz = ParameterizedTypeName.get(ClassName.get(Class.class),WildcardTypeName.subtypeOf(Object.class));
+
+        TypeName pathMap2 = ParameterizedTypeName.get(ClassName.get(Map.class), ClassName.get(String.class), clazz);
 
         MethodSpec.Builder getGroupMapBuilder = MethodSpec.methodBuilder("getPathMap")
                                                           .addAnnotation(Override.class)
                                                           .addModifiers(Modifier.PUBLIC)
                                                           .returns(pathMap2)
-                                                          .addStatement("$T<$T,$T>map =new $T()", Map.class, String.class, Class.class,
-                                                                  HashMap.class);
+                                                          .addStatement("$T<$T,$T<?>>map =new $T()", Map.class, String.class, Class.class, HashMap.class);
 
         if (classSimpleNameList.size() > 0) {
             for (int i = 0; i < classSimpleNameList.size(); i++) {
