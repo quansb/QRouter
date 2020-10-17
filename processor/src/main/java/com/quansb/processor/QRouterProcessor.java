@@ -67,6 +67,9 @@ public class QRouterProcessor extends AbstractProcessor {
 
     private List<ClassName> pathClassList = new ArrayList<>();
 
+
+    private final String APT_JAVA_SAVE_LOCATION="com.quansb.qrouter";  //apt生成的.java文件统一存在哪个目录下面   暂时不支持自定义目录
+
     @Override
 
     public synchronized void init(ProcessingEnvironment processingEnvironment) {
@@ -75,11 +78,14 @@ public class QRouterProcessor extends AbstractProcessor {
         messager = processingEnvironment.getMessager();
         filer = processingEnvironment.getFiler();
         typeTool = processingEnvironment.getTypeUtils();
-        moduleName = processingEnvironment.getOptions().get(ProcessorConfig.MODULE_NAME);
-        packageName = processingEnvironment.getOptions().get(ProcessorConfig.APT_PACKAGE);
+        moduleName = processingEnvironment.getOptions().get(ProcessorConfig.MODULE_NAME);   //从gradle获取
+      //  packageName = processingEnvironment.getOptions().get(ProcessorConfig.APT_PACKAGE);  //暂时不支持
         messager.printMessage(Diagnostic.Kind.NOTE, ">>>>>>>>>>>>>>>>>>>>>> QRouter路由搭建");
         messager.printMessage(Diagnostic.Kind.NOTE, ">>>>>>>>>>>>>>>>>>>>>> moduleName:" + moduleName);
         messager.printMessage(Diagnostic.Kind.NOTE, ">>>>>>>>>>>>>>>>>>>>>> packageName:" + packageName);
+
+        packageName=APT_JAVA_SAVE_LOCATION; //暂时不支持自定义目录
+
         if (moduleName != null && packageName != null) {
             messager.printMessage(Diagnostic.Kind.NOTE, "QRouter 环境搭建完成....");
         } else {
@@ -148,7 +154,7 @@ public class QRouterProcessor extends AbstractProcessor {
 //            @Override
 //            public Map<String, Class<? extends RouterPath>> getGroup() {
 //                Map<String, Class<? extends RouterPath>> map=new HashMap<>();
-//                map.put("z_app_admob",QRouter$$Path$$Admob.class);
+//                map.put("mine",QRouter$$Path$$Admob.class);
 //                return map;
 //            }
 //        }
@@ -158,7 +164,7 @@ public class QRouterProcessor extends AbstractProcessor {
      *     public class QRouter$$Group$$Admob implements RouterGroup {
      *             public Map<String, Class<? extends RouterPath>> getGroup() {
      *                 Map<String, Class<? extends RouterPath>> map=new HashMap<>();
-     *                 map.put("z_app_admob",QRouter$$Path$$Admob.class);
+     *                 map.put("mine",QRouter$$Path$$Admob.class);
      *                 return map;
      *             }
      *         }

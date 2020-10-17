@@ -17,7 +17,6 @@ android {
 
 
         // buildConfigField "String", "router_all_class_package_name", rootProject.stringType(packageNameForAPT)
-        buildConfigField "String", "router_all_class_package_name", stringType("com.quansb")
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -42,7 +41,7 @@ android {
         groupId = 'com.duiud.quansb'
         repoName = "quansb"
         artifactId = 'qrouter'
-        publishVersion = '1.0.2'
+        publishVersion = '1.0.3'
         desc = 'android module communicate by activity'
         website = 'https://github.com/quansb/QRouter.git'
     }
