@@ -1,3 +1,5 @@
+[![](https://www.jitpack.io/v/quansb/QRouter.svg)](https://www.jitpack.io/#quansb/QRouter)
+
 # QRouter
 android component communication
 
@@ -31,8 +33,8 @@ allprojects {
 app or module Gradle:
 ```
   dependencies {
-      implementation 'com.github.quansb:QRouter:1.0.0'
-      annotationProcessor 'com.github.quansb.QRouter:processor:1.0.0'
+      implementation 'com.github.quansb:QRouter:1.0.1'
+      annotationProcessor 'com.github.quansb.QRouter:processor:1.0.1'
   }
 ```
 
