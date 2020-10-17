@@ -4,9 +4,9 @@ android component communication
 版本功能  
 支持不同的module间Activity组件通信  
 
-例如: 同一级别  A module  和  B module  都被上层app module依赖,
- A 与 B 没有依赖关系
- A 与 B 都依赖 QRouter 通过调用 QRouter的方法进行通信
+例如: 同一级别 A module 和 B module 都被上层app module依赖  
+A 与 B 没有依赖关系  
+A 与 B 都依赖 QRouter 通过调用 QRouter的方法进行通信  
 
 # Download
 Use project Gradle:
@@ -26,7 +26,8 @@ allprojects {
 ```
 
 # Setting
-需要通信的所有module都要配置 ！！！！ 所有需要通信的都要配置
+需要通信的所有module都要配置 ！！！！ 所有需要通信的都要配置  
+
 app or module Gradle:
 ```
   dependencies {
