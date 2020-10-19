@@ -3,7 +3,7 @@
 [ ![Download](https://api.bintray.com/packages/zz1060743738/quansb/compiler/images/download.svg?version=1.0.3) ](https://bintray.com/zz1060743738/quansb/compiler/1.0.3/link)
 
 # QRouter
-android component communication
+Android module communication
 
 版本功能  
 支持不同的module间Activity组件通信  
@@ -37,6 +37,9 @@ app or module Gradle:
   dependencies {
       implementation 'com.github.quansb:QRouter:1.0.1'
       annotationProcessor 'com.github.quansb.QRouter:processor:1.0.1'
+      //or
+      implementation 'com.duiud.quansb:qrouter:1.0.3'
+      annotationProcessor 'com.duiud.quansb:compiler:1.0.3'
   }
 ```
 
