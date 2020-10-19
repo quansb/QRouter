@@ -1,4 +1,6 @@
 [![](https://www.jitpack.io/v/quansb/QRouter.svg)](https://www.jitpack.io/#quansb/QRouter)
+[ ![Download](https://api.bintray.com/packages/zz1060743738/quansb/qrouter/images/download.svg?version=1.0.3) ](https://bintray.com/zz1060743738/quansb/qrouter/1.0.3/link)
+[ ![Download](https://api.bintray.com/packages/zz1060743738/quansb/compiler/images/download.svg?version=1.0.3) ](https://bintray.com/zz1060743738/quansb/compiler/1.0.3/link)
 
 # QRouter
 android component communication
