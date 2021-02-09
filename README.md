@@ -1,44 +1,77 @@
+[![](https://www.jitpack.io/v/quansb/QRouter.svg)](https://www.jitpack.io/#quansb/QRouter)
+[ ![Download](https://api.bintray.com/packages/zz1060743738/quansb/qrouter/images/download.svg?version=1.0.3) ](https://bintray.com/zz1060743738/quansb/qrouter/1.0.3/link)
+[ ![Download](https://api.bintray.com/packages/zz1060743738/quansb/compiler/images/download.svg?version=1.0.3) ](https://bintray.com/zz1060743738/quansb/compiler/1.0.3/link)
+
 # QRouter
-android component communication
+Android module communication
 
 版本功能  
 支持不同的module间Activity组件通信  
 
+例如: 同一级别 A module 和 B module 都被上层app module依赖  
+A 与 B 没有依赖关系  
+A 与 B 都依赖 QRouter 通过调用 QRouter的方法进行通信  
 
 # Download
-use Gradle:
+Use project Gradle:
 ```
 repositories {
   google()
   jcenter()
 }
-dependencies {
-  implementation 'com.duiud.quansb:qrouter:1.0.0'
-  annotationProcessor 'com.github.quansb.QRouter:processor:1.0.0'
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+# Setting
+需要通信的所有module都要配置 ！！！！ 所有需要通信的都要配置  
+
+app or module Gradle:
+```
+  dependencies {
+      implementation 'com.github.quansb:QRouter:1.0.1'
+      annotationProcessor 'com.github.quansb.QRouter:processor:1.0.1'
+      //or
+      implementation 'com.duiud.quansb:qrouter:1.0.3'
+      annotationProcessor 'com.duiud.quansb:compiler:1.0.3'
+  }
+```
+
+
+```
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
 }
 ```
 
 
-# Setting
-在activity对应的module中配置
-切记：必须写在defaultConfig节点下
-
-```
-   javaCompileOptions {  
-            annotationProcessorOptions {  
-                arguments = [moduleName: project.getName()]  
-            }  
-        }  
-```
-
 # Using way
 
-在Activity中使用注解  @QRouter(path = "com/quansb/main", name = "MainActivity")
-
-其中path是类的包名  name是类的名字 （！！注意不是类全限定名！！）
+在Activity中使用注解  @QRouter(name = "MainActivity")
+    name是类的名字 （！！注意不是类全限定名！！）
 
 
 # Init
+```
+   RouterManager.getInstance().startActivity();
+```
+
 ```
  /**
      * @param context      context
@@ -50,16 +83,15 @@ dependencies {
     }
 ```
 
-# Example
+# Example   Module "home"   jump  to   Module "mine"
 ```
-@QRouter(path = "com/quansb/main", name = "MainActivity")
-public class MainActivity extends AppCompatActivity {
-
+@QRouter(name = "HomeActivity")
+public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        RouterManager.getInstance().startActivity(this, "app", "MineActivity");
+        setContentView(R.layout.activity_home);
+        RouterManager.getInstance().startActivity(this, "mine", "MineActivity");
     }
 }
 ```

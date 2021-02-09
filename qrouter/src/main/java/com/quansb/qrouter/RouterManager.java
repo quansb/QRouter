@@ -15,7 +15,8 @@ import java.util.Map;
  */
 public class RouterManager {
 
-    private final static String ROUTER_APT_ALL_CLASS_PACKAGE_NAME = BuildConfig.router_all_class_package_name;
+  //  private final static String ROUTER_APT_ALL_CLASS_PACKAGE_NAME = BuildConfig.router_all_class_package_name;
+    private final static String ROUTER_APT_ALL_CLASS_PACKAGE_NAME ="com.quansb.qrouter";  //apt生成的所有的.java所在的目录   反射该目录下的文件
     private final static String FILE_GROUP_NAME = "QRouter$$Group$$";
     private final static String FILE_PATH_NAME = "QRouter$$PATH$$";
 

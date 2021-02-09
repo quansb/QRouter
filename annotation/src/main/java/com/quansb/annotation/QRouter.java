@@ -13,8 +13,15 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.CLASS)
 public @interface QRouter {
-    //类的全名
-    String path();
-
+    /**
+     *
+     * @return Class name   不是全权限定名
+     */
     String name();
+
+    /**
+     *
+     * @return  暂时无效
+     */
+    String path() default "";
 }

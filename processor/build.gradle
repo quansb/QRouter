@@ -26,7 +26,7 @@ publish {
     groupId = 'com.duiud.quansb'
     repoName = "quansb"
     artifactId = 'compiler'
-    publishVersion = '1.0.2'
+    publishVersion = '1.0.3'
     desc = 'android module communicate by activity'
     website = 'https://github.com/quansb/QRouter.git'
 }
