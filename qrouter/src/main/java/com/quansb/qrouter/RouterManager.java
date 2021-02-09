@@ -73,15 +73,8 @@ public class RouterManager {
             activityClass = routerPath.getPathMap().get(activityName);
             pathMap.put(activityName, activityClass);
             intentJump(context, activityClass, activityName);
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             Log.e("RouterManager", "" + activityName + e.getMessage());
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            Log.e("RouterManager", "" + activityName + e.getMessage());
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            Log.e("RouterManager", "" + activityName + e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -133,17 +126,9 @@ public class RouterManager {
             clazz = routerPath.getPathMap().get(className);
             pathMap.put(className, clazz);
             return clazz;
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             Log.e("RouterManager", "" + className + e.getMessage());
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            Log.e("RouterManager", "" + className + e.getMessage());
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            Log.e("RouterManager", "" + className + e.getMessage());
-            e.printStackTrace();
         }
-
         return null;
     }
 

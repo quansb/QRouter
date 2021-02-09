@@ -7,5 +7,5 @@ import java.util.Map;
  * Date:2020/5/18
  */
 public interface RouterPath {
-    public Map<String, Class<?>> getPathMap();
+    Map<String, Class<?>> getPathMap();
 }

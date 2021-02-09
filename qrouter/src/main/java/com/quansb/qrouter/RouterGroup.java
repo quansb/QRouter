@@ -8,5 +8,5 @@ import java.util.Map;
  * Date:2020/5/18
  */
 public interface RouterGroup {
-    public Map<String, Class<? extends RouterPath>> getGroupMap();
+    Map<String, Class<? extends RouterPath>> getGroupMap();
 }
