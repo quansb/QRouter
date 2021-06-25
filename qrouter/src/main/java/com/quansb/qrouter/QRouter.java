@@ -7,23 +7,25 @@ package com.quansb.qrouter;
  */
 public class QRouter {
 
-    private static volatile QRouter qRouter;
+    private QRouter() {
 
-    private QRouter() {}
-
-    public static QRouter getInstance() {
-        if (null == qRouter) {
-            synchronized (QRouter.class) {
-                if (null == qRouter) {
-                    qRouter = new QRouter();
-                }
-            }
-        }
-        return qRouter;
     }
 
-    public QParcel build(){
-        return new QParcel();
+    private static class Stub {
+        private static QRouter sQRouter = new QRouter();
+
+    }
+    public static QRouter getInstance() {
+        return Stub.sQRouter;
+    }
+
+//    public Parcel with() {
+//
+//
+//    }
+
+    public Parcel build() {
+        return new Parcel();
     }
 
 }

@@ -8,70 +8,70 @@ import java.io.Serializable;
  * @description
  * @date 2020/11/3
  */
-public class QParcel implements IParcel<Bundle> {
+public class Parcel implements IParcel<Bundle> {
 
     private Bundle mBundle;
 
-    public QParcel(){
+    public Parcel(){
         obtain();
     }
 
-    public QParcel putByte(String key, byte value) {
+    public Parcel putByte(String key, byte value) {
         mBundle.putByte(key, value);
         return this;
     }
 
-    public QParcel putChar(String key, char value) {
+    public Parcel putChar(String key, char value) {
         mBundle.putChar(key, value);
         return this;
     }
 
-    public QParcel putShort(String key, short value) {
+    public Parcel putShort(String key, short value) {
         mBundle.putShort(key, value);
         return this;
     }
 
-    public QParcel putInt(String key, int value) {
+    public Parcel putInt(String key, int value) {
         mBundle.putInt(key, value);
         return this;
     }
 
-    public QParcel putLong(String key, long value) {
+    public Parcel putLong(String key, long value) {
         mBundle.putLong(key, value);
         return this;
     }
 
-    public QParcel putFloat(String key, float value) {
+    public Parcel putFloat(String key, float value) {
         mBundle.putFloat(key, value);
         return this;
     }
 
-    public QParcel putDouble(String key, double value) {
+    public Parcel putDouble(String key, double value) {
         mBundle.putDouble(key, value);
         return this;
     }
 
-    public QParcel putBoolean(String key, boolean value) {
+    public Parcel putBoolean(String key, boolean value) {
         mBundle.putBoolean(key, value);
         return this;
     }
 
-    public QParcel putString(String key, String value) {
+    public Parcel putString(String key, String value) {
         mBundle.putString(key, value);
         return this;
     }
 
-    public QParcel putSerializable(String key, Serializable value) {
+    public Parcel putSerializable(String key, Serializable value) {
         mBundle.putSerializable(key, value);
         return this;
     }
 
-    public QParcel putBundle(String key, Bundle value) {
+    public Parcel putBundle(String key, Bundle value) {
         mBundle.putBundle(key, value);
         return this;
     }
 
-    public QParcel putAll(Bundle bundle) {
+    public Parcel putAll(Bundle bundle) {
         mBundle.putAll(bundle);
         return this;
     }

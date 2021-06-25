@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
 public @interface QRouter {
     /**
      *
-     * @return Class name   不是全权限定名
+     * @return Class getSimpleName()
      */
     String name();
 

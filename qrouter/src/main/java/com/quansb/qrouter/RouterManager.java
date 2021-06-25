@@ -21,7 +21,6 @@ public class RouterManager {
     private final static String FILE_PATH_NAME = "QRouter$$PATH$$";
 
     private static Map<String, RouterPath> groupMap = new HashMap<>();
-
     private static Map<String, Class<?>> pathMap = new HashMap<>();
 
     private static volatile RouterManager routerManager;
@@ -39,6 +38,8 @@ public class RouterManager {
         }
         return routerManager;
     }
+
+
 
     /**
      * @param context      context

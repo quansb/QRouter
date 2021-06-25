@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.quansb.annotation.QRouter;
 
-@QRouter(name = "MineActivity")
+@QRouter(path = "", name = "MineActivity")
 public class MineActivity extends AppCompatActivity {
 
     @Override
